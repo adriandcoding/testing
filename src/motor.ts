@@ -1,4 +1,4 @@
-import { partida } from "./modelo";
+import { partida,  } from "./modelo";
 import { deshabilitarBotonPedirCarta, nuevaPartida } from "./ui";
 
 //función para generar carta aleatoria
