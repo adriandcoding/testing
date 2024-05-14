@@ -50,6 +50,15 @@ describe('obtenerValorCarta', () => {
     //Assert
     expect(result).toBe(esperado);
   });
+  it('Debería devolver 0.5 si el número es 11', () => {
+    //Arrange
+    const carta = 11;
+    const esperado = 0.5;
+    //Act
+    const result = obtenerValorCarta(carta);
+    //Assert
+    expect(result).toBe(esperado);
+  });
 })
 
 describe("valorar", () => {
