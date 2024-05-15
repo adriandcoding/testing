@@ -1,4 +1,36 @@
-import { obtenerNumeroCarta, obtenerValorCarta } from "./motor";
+import { obtenerNumeroCarta, obtenerValorCarta, valorar } from "./motor";
+import { partida } from "./modelo";
+
+describe("valorar", () => {
+  it("Debería devolver has sido muy conservador si los puntos son < 4", () => {
+    //Arrange
+    partida.puntosTotales = 3;
+    const esperado = "Has sido muy conservador";
+    //Act
+    const result = valorar();
+    //Assert
+    expect(result).toBe(esperado);
+  })
+  it("Debería devolver te ha entrado el canguelo eh si los puntos son 5", () => {
+    //Arrange
+    partida.puntosTotales = 5;
+    const esperado = "Te ha entrado el canguelo eh?";
+    //Act
+    const result = valorar();
+    //Assert
+    expect(result).toBe(esperado);
+  
+
+  })
+  it("Debería devolver lo has clavado si los puntos son 7.5", () => {
+    //Arrange
+    partida.puntosTotales = 7.5;
+    const esperado = "¡ Lo has clavado! ¡Enhorabuena!";
+    //Act
+    const result = valorar();
+    //Assert
+    expect(result).toBe(esperado);
+  })})
 
 describe("obtenerNumeroCarta", () => {
   it("Debería devolver 10 si el número es 8", () => {
@@ -51,3 +83,4 @@ describe("obtenerValorCarta", () => {
     expect(result).toBe(esperado);
   });
 });
+
