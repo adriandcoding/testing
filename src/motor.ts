@@ -1,5 +1,5 @@
 import { partida,  } from "./modelo";
-import { deshabilitarBotonPedirCarta, nuevaPartida } from "./ui";
+
 
 //función para generar carta aleatoria
 export const obtenerNumeroAleatorio = (): number => {
@@ -96,21 +96,4 @@ export const valorar = (): string => {
   }
 
   return mensaje;
-};
-//funcionalidad para el botón de game over
-const gameOver = (): void => {
-  alert("¡HAS PERDIDO!\u{1F600}");
-  deshabilitarBotonPedirCarta(true);
-};
-export const checkearPartida = () => {
-  if (partida.puntosTotales === 7.5) {
-    alert("¡HAS GANADO!\u{1F600}");
-  }
-  if (partida.puntosTotales > 7.5) {
-    gameOver();
-  }
-};
-
-export const iniciarPartida = () => {
-  nuevaPartida();
 };

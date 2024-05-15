@@ -7,7 +7,7 @@ import {
   sumarPuntos,
   asignarNuevosPuntos,
   obtenerUrlImagen,
-  checkearPartida,
+  
 } from "./motor";
 //función para mostrar la puntuacion
 export const mostrarPuntuacion = () => {
@@ -99,3 +99,21 @@ const BotonYsi = document.querySelector(".ysi");
 if (BotonYsi && BotonYsi instanceof HTMLButtonElement) {
   BotonYsi.addEventListener("click", pideCarta);
 }
+//funcionalidad para el botón de game over
+const gameOver = (): void => {
+  alert("¡HAS PERDIDO!\u{1F600}");
+  deshabilitarBotonPedirCarta(true);
+};
+export const checkearPartida = () => {
+  if (partida.puntosTotales === 7.5) {
+    alert("¡HAS GANADO!\u{1F600}");
+  }
+  if (partida.puntosTotales > 7.5) {
+    gameOver();
+  }
+};
+
+export const iniciarPartida = () => {
+  nuevaPartida();
+};
+
